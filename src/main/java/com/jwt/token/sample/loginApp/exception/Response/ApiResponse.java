@@ -1,4 +1,4 @@
-package com.jwt.token.sample.loginApp.Exception.Response;
+package com.jwt.token.sample.loginApp.exception.Response;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;

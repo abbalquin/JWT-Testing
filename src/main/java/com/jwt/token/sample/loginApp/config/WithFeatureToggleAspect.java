@@ -1,8 +1,7 @@
 package com.jwt.token.sample.loginApp.config;
 
-import com.jwt.token.sample.loginApp.Exception.FeatureDisabledException;
-import com.jwt.token.sample.loginApp.Service.FeatureToggleService;
-import com.jwt.token.sample.loginApp.config.WithFeatureToggle;
+import com.jwt.token.sample.loginApp.exception.FeatureDisabledException;
+import com.jwt.token.sample.loginApp.service.FeatureToggleService;
 import com.jwt.token.sample.loginApp.constant.FeatureCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

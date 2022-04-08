@@ -1,4 +1,4 @@
-package com.jwt.token.sample.loginApp.Exception;
+package com.jwt.token.sample.loginApp.exception;
 
 import com.jwt.token.sample.loginApp.constant.FeatureCode;
 import org.springframework.http.HttpStatus;

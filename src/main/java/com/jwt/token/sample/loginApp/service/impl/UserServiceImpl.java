@@ -1,11 +1,10 @@
-package com.jwt.token.sample.loginApp.Service.impl;
+package com.jwt.token.sample.loginApp.service.impl;
 
-import com.jwt.token.sample.loginApp.Service.UserService;
+import com.jwt.token.sample.loginApp.service.UserService;
 import com.jwt.token.sample.loginApp.domain.Role;
 import com.jwt.token.sample.loginApp.domain.User;
 import com.jwt.token.sample.loginApp.repository.RoleRepository;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,6 @@
-package com.jwt.token.sample.loginApp.Exception.Response;
+package com.jwt.token.sample.loginApp.exception.Response;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.Map;

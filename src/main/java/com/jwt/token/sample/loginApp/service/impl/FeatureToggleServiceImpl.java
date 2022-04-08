@@ -1,13 +1,11 @@
-package com.jwt.token.sample.loginApp.Service.impl;
+package com.jwt.token.sample.loginApp.service.impl;
 
-import com.jwt.token.sample.loginApp.Service.FeatureToggleService;
+import com.jwt.token.sample.loginApp.service.FeatureToggleService;
 import com.jwt.token.sample.loginApp.constant.FeatureCode;
 import com.jwt.token.sample.loginApp.domain.FeatureToggle;
 import com.jwt.token.sample.loginApp.repository.FeatureToggleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import javax.xml.bind.annotation.XmlType;
 
 @Service
 @RequiredArgsConstructor

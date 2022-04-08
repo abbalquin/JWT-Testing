@@ -1,4 +1,4 @@
-package com.jwt.token.sample.loginApp.Service;
+package com.jwt.token.sample.loginApp.service;
 
 import com.jwt.token.sample.loginApp.domain.Role;
 import com.jwt.token.sample.loginApp.domain.User;

@@ -24,10 +24,6 @@ public class WithFeatureToggleAspect {
     public Object validateFeatureToggle(ProceedingJoinPoint joinPoint,
                                         WithFeatureToggle featureToggle) throws Throwable {
         for (FeatureCode featureCode : featureToggle.value()) {
-            log.info("Hello world info");
-            log.warn("Hello world warning");
-            log.error("Hello world error");
-            log.debug("Hello world debug");
             boolean enabled = featureToggleService.checkFeatureEnabled(featureCode);
 
             if (!enabled) {

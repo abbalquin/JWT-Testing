@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Log name could be {logback-spring.xml} or {logback.xml} -->
+<!-- This file must be located at resources to work -->
+<configuration>
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}) %msg%n%throwable
+            </Pattern>
+        </layout>
+    </appender>
+
+    <!-- Show logs in Console -->
+    <root level="info">
+        <appender-ref ref="Console"/>
+    </root>
+
+    <appender name="AppRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>D:/logging/sample.log</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %blue(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}) %msg%n%throwable
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>D:/logging/sample.split.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+<!--            <maxHistory>100</maxHistory>-->
+            <maxHistory>${LOGGING_MAX_HISTORY}</maxHistory> <!-- Could also get value from env config-->
+            <maxFileSize>1MB</maxFileSize>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="com.jwt.token.sample.loginApp" level="info" additivity="false">
+        <appender-ref ref="AppRollingFile"/>
+    </logger>
+</configuration>

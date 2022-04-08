@@ -12,6 +12,14 @@ public class ApiException extends RuntimeException{
     private String code;
     private String heading;
 
+    public ApiException(String value){
+        this(value, "");
+    }
+
+    public ApiException(String value, String description){
+        this(HttpStatus.UNPROCESSABLE_ENTITY, value, description);
+    }
+
     public ApiException(String value, String description, String code, String heading){
         super(value);
         this.httpStatus = HttpStatus.FORBIDDEN;

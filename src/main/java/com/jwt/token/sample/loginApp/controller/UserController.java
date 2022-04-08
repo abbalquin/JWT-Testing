@@ -3,7 +3,7 @@ package com.jwt.token.sample.loginApp.controller;
 import com.jwt.token.sample.loginApp.service.UserService;
 import com.jwt.token.sample.loginApp.config.WithFeatureToggle;
 import com.jwt.token.sample.loginApp.constant.FeatureCode;
-import com.jwt.token.sample.loginApp.domain.User;
+import com.jwt.token.sample.loginApp.domain.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

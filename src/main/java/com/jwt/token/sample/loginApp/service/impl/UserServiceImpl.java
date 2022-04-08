@@ -1,8 +1,8 @@
 package com.jwt.token.sample.loginApp.service.impl;
 
 import com.jwt.token.sample.loginApp.service.UserService;
-import com.jwt.token.sample.loginApp.domain.Role;
-import com.jwt.token.sample.loginApp.domain.User;
+import com.jwt.token.sample.loginApp.domain.entity.Role;
+import com.jwt.token.sample.loginApp.domain.entity.User;
 import com.jwt.token.sample.loginApp.repository.RoleRepository;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

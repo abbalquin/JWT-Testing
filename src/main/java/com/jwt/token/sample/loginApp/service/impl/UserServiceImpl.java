@@ -7,6 +7,8 @@ import com.jwt.token.sample.loginApp.repository.RoleRepository;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -39,8 +41,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUsers() {
+    public List<User> getUsers(Pageable pageable) {
         log.info("fetching all users");
-        return userRepository.findAll();
+        Page<User> userPage = userRepository.findAll(pageable);
+        return userPage.getContent();
     }
 }

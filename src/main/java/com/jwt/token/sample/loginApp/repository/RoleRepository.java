@@ -1,6 +1,6 @@
 package com.jwt.token.sample.loginApp.repository;
 
-import com.jwt.token.sample.loginApp.domain.Role;
+import com.jwt.token.sample.loginApp.domain.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

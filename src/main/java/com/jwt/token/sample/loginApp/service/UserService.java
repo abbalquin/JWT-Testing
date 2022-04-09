@@ -1,7 +1,7 @@
 package com.jwt.token.sample.loginApp.service;
 
-import com.jwt.token.sample.loginApp.domain.Role;
-import com.jwt.token.sample.loginApp.domain.User;
+import com.jwt.token.sample.loginApp.domain.entity.Role;
+import com.jwt.token.sample.loginApp.domain.entity.User;
 
 import java.util.List;
 

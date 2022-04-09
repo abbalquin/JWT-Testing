@@ -1,4 +1,4 @@
-package com.jwt.token.sample.loginApp.domain;
+package com.jwt.token.sample.loginApp.domain.entity;
 
 import lombok.*;
 

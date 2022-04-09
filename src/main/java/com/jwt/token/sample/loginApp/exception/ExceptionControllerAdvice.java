@@ -1,7 +1,7 @@
 package com.jwt.token.sample.loginApp.exception;
 
-import com.jwt.token.sample.loginApp.exception.Response.ErrorResource;
-import com.jwt.token.sample.loginApp.exception.Response.ErrorResponseEntity;
+import com.jwt.token.sample.loginApp.exception.response.ErrorResource;
+import com.jwt.token.sample.loginApp.exception.response.ErrorResponseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;

@@ -16,15 +16,15 @@ public class FileDownloadController {
 
     private final GenerateUserReport generateUserReport;
 
-    private static final String CACHE_CONTROL_VALUE="must-revalidate, post-check=0, pre-check=0";
+    private static final String CACHE_CONTROL_VALUE = "must-revalidate, post-check=0, pre-check=0";
 
     @GetMapping("v1/download/user")
-    public ResponseEntity<byte[]> downloadUser(){
+    public ResponseEntity<byte[]> downloadUser() {
         DownloadFileResponse downloadFileResponse = generateUserReport.execute();
         return buildDownloadResource(downloadFileResponse);
     }
 
-    private ResponseEntity<byte[]> buildDownloadResource(DownloadFileResponse downloadFileResponse){
+    private ResponseEntity<byte[]> buildDownloadResource(DownloadFileResponse downloadFileResponse) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType(downloadFileResponse.getContentType()));
         headers.setContentDispositionFormData(downloadFileResponse.getFileName(), downloadFileResponse.getFileName());

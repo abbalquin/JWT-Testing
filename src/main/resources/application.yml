@@ -1,5 +1,5 @@
 spring:
-  datasource :
+  datasource:
     url: jdbc:mysql://localhost:3306/springboot
     username: root
     password: P@ssw0rd123
@@ -12,6 +12,13 @@ spring:
     user:
       name: admin
       password: secret
+
+  activemq:
+    broker-url: ${ACTIVEMQ_BROKER_URL}
+    user: ${ACTIVEMQ_USERNAME}
+    password: ${ACTIVEMQ_PASSWORD}
+    packages:
+      trust-all:true
 
 logging:
   level:

@@ -29,6 +29,6 @@ public class LoginAppApplication {//extends SpringBootServletInitializer {
 //    }
 
     public static void main(String[] args) {
-        //SpringApplication.run(LoginAppApplication.class);
+        SpringApplication.run(LoginAppApplication.class);
     }
 }

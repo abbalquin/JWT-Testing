@@ -7,6 +7,7 @@ import com.jwt.token.sample.loginApp.domain.entity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,11 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getUsers(Pageable pageable){
         return userService.getUsers(pageable);
+    }
+
+    @PostMapping("/users/send")
+    public boolean sendMessageToUsers(){
+        return userService.sendMessageToUser();
     }
 
 }

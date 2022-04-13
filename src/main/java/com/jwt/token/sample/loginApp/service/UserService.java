@@ -12,4 +12,5 @@ public interface UserService {
     Role saveRole(Role role);
     User getUser(String username);
     List<User> getUsers(Pageable pageable);
+    Boolean sendMessageToUser();
 }

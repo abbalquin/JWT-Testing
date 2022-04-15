@@ -17,9 +17,9 @@
     </root>
 
     <appender name="AppRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>D:/logging/sample.log</file>
+        <file>D:/logging/hello.log</file>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>ERROR</level>
+            <level>INFO</level>
         </filter>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>
@@ -28,10 +28,10 @@
         </encoder>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>D:/logging/sample.split.%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>D:/logging/hello.split.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
 <!--            <maxHistory>100</maxHistory>-->
-            <maxHistory>${LOGGING_MAX_HISTORY}</maxHistory> <!-- Could also get value from env config-->
+            <maxHistory>${LOGGING_MAX_HISTORY:100}</maxHistory> <!-- Could also get value from env config-->
             <maxFileSize>1MB</maxFileSize>
         </rollingPolicy>
     </appender>

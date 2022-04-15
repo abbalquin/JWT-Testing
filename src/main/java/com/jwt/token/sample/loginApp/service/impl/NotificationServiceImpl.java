@@ -15,7 +15,7 @@ import java.util.Map;
 public class NotificationServiceImpl implements NotificationService {
 
     private final JmsTemplate jmsTemplate;
-    private static final String SAMPLE_QUEUE="sample.queue2";
+    private static final String SAMPLE_QUEUE = "sample.queue2";
 
     @Override
     public boolean sendUserNotification(Map<String, String> message) {
@@ -23,8 +23,8 @@ public class NotificationServiceImpl implements NotificationService {
     }
 
     @Async
-    private boolean sendMessage(String queue,Map<String, String> message){
-        try{
+    private boolean sendMessage(String queue, Map<String, String> message) {
+        try {
             jmsTemplate.convertAndSend(queue, message);
         } catch (Exception e) {
             log.warn("Message sending failed " + message, e);

@@ -1,6 +1,7 @@
 package com.jwt.token.sample.loginApp.controller;
 
 import com.jwt.token.sample.loginApp.dto.DownloadFileResponse;
+import com.jwt.token.sample.loginApp.exception.ApiException;
 import com.jwt.token.sample.loginApp.service.GenerateUserReport;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;

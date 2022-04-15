@@ -1,11 +1,11 @@
 package com.jwt.token.sample.loginApp.service.impl;
 
-import com.jwt.token.sample.loginApp.service.NotificationService;
-import com.jwt.token.sample.loginApp.service.UserService;
 import com.jwt.token.sample.loginApp.domain.entity.Role;
 import com.jwt.token.sample.loginApp.domain.entity.User;
 import com.jwt.token.sample.loginApp.repository.RoleRepository;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
+import com.jwt.token.sample.loginApp.service.NotificationService;
+import com.jwt.token.sample.loginApp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
     public Boolean sendMessageToUser() {
         Map<String, String> message = new HashMap<>();
         List<User> users = userRepository.findAll();
-        for(User user : users){
+        for (User user : users) {
             message.put(user.getUsername(), user.getPassword());
         }
         return notificationService.sendUserNotification(message);

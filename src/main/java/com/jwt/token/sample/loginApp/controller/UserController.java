@@ -1,9 +1,9 @@
 package com.jwt.token.sample.loginApp.controller;
 
-import com.jwt.token.sample.loginApp.service.UserService;
 import com.jwt.token.sample.loginApp.config.WithFeatureToggle;
 import com.jwt.token.sample.loginApp.constant.FeatureCode;
 import com.jwt.token.sample.loginApp.domain.entity.User;
+import com.jwt.token.sample.loginApp.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +22,12 @@ public class UserController {
 
     @WithFeatureToggle({FeatureCode.USER_TOGGLE})
     @GetMapping("/users")
-    public List<User> getUsers(Pageable pageable){
+    public List<User> getUsers(Pageable pageable) {
         return userService.getUsers(pageable);
     }
 
     @PostMapping("/users/send")
-    public boolean sendMessageToUsers(){
+    public boolean sendMessageToUsers() {
         return userService.sendMessageToUser();
     }
 

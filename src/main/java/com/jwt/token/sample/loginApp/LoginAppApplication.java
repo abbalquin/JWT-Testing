@@ -8,7 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableAspectJAutoProxy
 @SpringBootApplication
@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaRepositories(basePackages = "com.jwt.token.sample.loginApp.repository")
 @EnableJms
 @EnableScheduling
-//@EnableWebMvc
+@EnableWebMvc
 public class LoginAppApplication {//extends SpringBootServletInitializer {
 
 //    @Override

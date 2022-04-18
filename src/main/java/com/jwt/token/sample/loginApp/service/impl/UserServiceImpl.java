@@ -2,6 +2,9 @@ package com.jwt.token.sample.loginApp.service.impl;
 
 import com.jwt.token.sample.loginApp.domain.entity.Role;
 import com.jwt.token.sample.loginApp.domain.entity.User;
+import com.jwt.token.sample.loginApp.dto.UserCreationForm;
+import com.jwt.token.sample.loginApp.dto.UserCreationResponse;
+import com.jwt.token.sample.loginApp.mapper.UserMapper;
 import com.jwt.token.sample.loginApp.repository.RoleRepository;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
 import com.jwt.token.sample.loginApp.service.NotificationService;
@@ -18,18 +21,21 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 @Slf4j
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final NotificationService notificationService;
+    private final UserMapper userMapper;
 
     @Override
-    public User saveUser(User user) {
+    public UserCreationResponse saveUser(UserCreationForm form) {
+        User user = userMapper.formToUser(form);
+        userRepository.save(user);
         log.info("new user has been save : {}", user.getUsername());
-        return userRepository.save(user);
+        return userMapper.userToResponse(user);
     }
 
     @Override

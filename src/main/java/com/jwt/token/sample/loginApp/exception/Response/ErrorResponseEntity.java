@@ -27,4 +27,17 @@ public class ErrorResponseEntity<T> extends ResponseEntity<ApiResponse>{
         log.error(">>>>>>>>>> error : " + value + " ... " + description);
         return new ErrorResponseEntity<>(errors, statusCode);
     }
+
+    public static ErrorResponseEntity<ErrorResource> globalError(HttpStatus code, List<ErrorResource> errors){
+        return new ErrorResponseEntity<>(errors, code);
+    }
+
+    public static ErrorResponseEntity<ErrorResource> globalError(String value){
+        return globalError(value, null, null, null);
+    }
+
+    public static ErrorResponseEntity<ErrorResource> globalError(String value, String description, String customCode, String heading){
+        List<ErrorResource> errors = Collections.singletonList(new ErrorResource(value, description, customCode, heading));
+        return new ErrorResponseEntity<>(errors);
+    }
 }

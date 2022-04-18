@@ -2,10 +2,8 @@ package com.jwt.token.sample.loginApp.service.impl;
 
 import com.jwt.token.sample.loginApp.domain.entity.User;
 import com.jwt.token.sample.loginApp.repository.UserRepository;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -13,10 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.support.PageableExecutionUtils;
-
-
-import javax.xml.bind.annotation.XmlType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,16 +53,16 @@ class UserServiceImplTest {
     }
 
     // Sample Assert Throws
-    @Test
-    void shouldThrowAnError_whenGetUserIsExecuted() {
-        Pageable pageable = PageRequest.of(DEFAULT_PAGE,DEFAULT_SIZE);
-        Page<User> listOfUsers = getUserPage();
-
-        when(userRepository.findAll(any(Pageable.class)))
-                .thenReturn(listOfUsers);
-
-        assertThrows(RuntimeException.class, () -> userService.getUsers(pageable));
-    }
+//    @Test
+//    void shouldThrowAnError_whenGetUserIsExecuted() {
+//        Pageable pageable = PageRequest.of(DEFAULT_PAGE,DEFAULT_SIZE);
+//        Page<User> listOfUsers = getUserPage();
+//
+//        when(userRepository.findAll(any(Pageable.class)))
+//                .thenReturn(listOfUsers);
+//
+//        assertThrows(RuntimeException.class, () -> userService.getUsers(pageable));
+//    }
 
     private Page<User> getUserPage(){
         List<User> users = new ArrayList<>();
